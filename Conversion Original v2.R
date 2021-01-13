@@ -8,8 +8,8 @@ library(plyr)
 library(data.table)
 library(stringr)
 
-data_folder <- "C:/Users/aaron.beach/OneDrive - nswis.com.au/GitHub/High-Jump-Conversion/datafolder2"
-Processed_data <- "C:/Users/aaron.beach/OneDrive - nswis.com.au/GitHub/High-Jump-Conversion/Processed data/"
+data_folder <- "C:/Users/aaron.beach/..../GitHub/High-Jump-Conversion/datafolder2"
+Processed_data <- "C:/Users/aaron.beach/..../GitHub/High-Jump-Conversion/Processed data/"
 filenames = list.files(data_folder, pattern = "*.csv", full.names = T)
 dataname = basename(filenames)
 dataname <-  str_remove_all(dataname, ".csv")
@@ -17,7 +17,7 @@ dataname <-  str_remove_all(dataname, ".csv")
 
 table1 <-  lapply(filenames, fread, header=FALSE, stringsAsFactors=FALSE, na.strings=c(""," ","NA"))
 
-#imported_data <- read.csv("C:/Users/aaron.beach/OneDrive - nswis.com.au/R/Hammer Conversion/sample2.csv", header=FALSE, stringsAsFactors=FALSE)
+#imported_data <- read.csv("C:/Users/aaron.beach/..../R/Hammer Conversion/sample2.csv", header=FALSE, stringsAsFactors=FALSE)
 
 labels <-  t(data.frame(strsplit(dataname, "_")))
 fullnames <-  data.frame(dataname, labels)
